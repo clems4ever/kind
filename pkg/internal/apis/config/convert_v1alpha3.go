@@ -73,6 +73,7 @@ func convertv1alpha3Networking(in *v1alpha3.Networking, out *Networking) {
 	out.PodSubnet = in.PodSubnet
 	out.ServiceSubnet = in.ServiceSubnet
 	out.DisableDefaultCNI = in.DisableDefaultCNI
+	out.DockerNetwork = in.DockerNetwork
 }
 
 func convertv1alpha3Mount(in *v1alpha3.Mount, out *Mount) {

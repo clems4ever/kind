@@ -99,6 +99,8 @@ type Networking struct {
 	// If DisableDefaultCNI is true, kind will not install the default CNI setup.
 	// Instead the user should install their own CNI after creating the cluster.
 	DisableDefaultCNI bool
+        // DockerNetwork is the docker network to attach containers to
+        DockerNetwork string
 }
 
 // ClusterIPFamily defines cluster network IP family

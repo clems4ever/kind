@@ -136,6 +136,12 @@ func commonArgs(cluster string, cfg *config.Cluster) ([]string, error) {
 		"--label", fmt.Sprintf("%s=%s", deprecatedClusterLabelKey, cluster),
 	}
 
+        // Attach containers to specified docker network
+	if cfg.Networking.DockerNetwork != "" {
+		args = append(args, "--network", cfg.Networking.DockerNetwork)
+	}
+
+
 	// enable IPv6 if necessary
 	if clusterIsIPv6(cfg) {
 		args = append(args, "--sysctl=net.ipv6.conf.all.disable_ipv6=0", "--sysctl=net.ipv6.conf.all.forwarding=1")
